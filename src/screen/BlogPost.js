@@ -8,7 +8,7 @@ import Image4 from '../../assets/youp.jpg'
 
 
 
-export default function BlogPost({navigation}) {
+export default function BlogPost({ navigation }) {
     const blog = [
         { imgUrl: Image1, writer: 'Akuapem Polo', time: '9', header: "Two Arkansas firemen, Vince and Don, get hold of a map" },
         { imgUrl: Image2, writer: 'Kofi Kwabota', time: '5', header: 'They caught me sliding on the E-Way with the heat' },
@@ -25,12 +25,12 @@ export default function BlogPost({navigation}) {
             <FlatList
                 data={blog}
                 renderItem={({ item }) => {
-                    return <TouchableOpacity onPress={()=>{navigation.navigate('Movie Review')}}><Post
-                            author={item.writer}
-                            duration={item.time}
-                            photo={item.imgUrl}
-                            title={item.header}
-                        /></TouchableOpacity>
+                    return <TouchableOpacity onPress={() => { navigation.navigate('Movie Review', { newAuthor: item.writer, newTime: item.time, newTitle: item.header, newPhoto: item.imgUrl }) }}><Post
+                        author={item.writer}
+                        duration={item.time}
+                        photo={item.imgUrl}
+                        title={item.header}
+                    /></TouchableOpacity>
                 }}
                 keyExtractor={(item) => item.time}
             />

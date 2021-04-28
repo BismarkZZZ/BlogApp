@@ -38,21 +38,21 @@ export default function App() {
           }}
           name='Home'
           component={BlogPost} />
-        <Stack.Screen 
-        options={{
-          title: '',
-          headerRight: () => (
-            <View style={{ flexDirection: 'row', marginRight: 20 }}>
-              <Feather name="headphones" size={30} color="black" style={{marginRight: 15}}/>
-              <Feather name="heart" size={30} color="black" style={{marginRight: 15}}/>
-              <AntDesign name="sharealt" size={30} color="black" style={{marginRight: 5}}/>
-            </View>
-          ),
-          headerStyle: {
-            height: 125
-          }
-        }}
-        name='Movie Review' component={DetailedPost} />
+        <Stack.Screen
+          options={{
+            title: '',
+            headerRight: () => (
+              <View style={{ flexDirection: 'row', marginRight: 20 }}>
+                <Feather name="headphones" size={30} color="black" style={{ marginRight: 15 }} />
+                <Feather name="heart" size={30} color="black" style={{ marginRight: 15 }} />
+                <AntDesign name="sharealt" size={30} color="black" style={{ marginRight: 5 }} />
+              </View>
+            ),
+            headerStyle: {
+              height: 125
+            }
+          }}
+          name='Movie Review' component={DetailedPost} />
 
       </Stack.Navigator>
 

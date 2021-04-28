@@ -6,29 +6,30 @@ import Picture from '../../assets/beat.jpg'
 
 
 
-export default function DetailedPost() {
+export default function DetailedPost({route}) {
     return (
         <SafeAreaView style={styles.container}>
            
             <View style={styles.ImgContainer}>
                 <Image
                     style={styles.PostImg}
-                    source={Picture} />
+                    source={route.params.newPhoto}
+                    />
             </View>
 
             <View style={styles.Headertainer}>
-                <Text style={styles.Title}>Title</Text>
+                <Text style={styles.Title}>{route.params.newTitle}</Text>
 
                 <View style={styles.headtime}>
                     <View style={styles.Writers}>
                         <Image
                             style={styles.Proimage}
                             source={Picture} />
-                        <Text style={styles.WritersName}>author</Text>
+                        <Text style={styles.WritersName}>{route.params.newAuthor}</Text>
                     </View>
                     <View style={styles.WritersTime}>
                         <Entypo name="dot-single" size={24} color="#bfc1c2" />
-                        <Text style={styles.WritersMin}>2 min read</Text>
+                        <Text style={styles.WritersMin}>{route.params.newTime} min read</Text>
                     </View>
                 </View>
 
