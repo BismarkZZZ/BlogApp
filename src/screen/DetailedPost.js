@@ -3,12 +3,13 @@ import { View, SafeAreaView, StyleSheet, Image, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Entypo } from '@expo/vector-icons';
 import Picture from '../../assets/beat.jpg'
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 
 export default function DetailedPost({route}) {
     return (
-        <SafeAreaView style={styles.container}>
+        <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
            
             <View style={styles.ImgContainer}>
                 <Image
@@ -24,7 +25,7 @@ export default function DetailedPost({route}) {
                     <View style={styles.Writers}>
                         <Image
                             style={styles.Proimage}
-                            source={Picture} />
+                            source={route.params.newPhoto} />
                         <Text style={styles.WritersName}>{route.params.newAuthor}</Text>
                     </View>
                     <View style={styles.WritersTime}>
@@ -44,7 +45,7 @@ export default function DetailedPost({route}) {
 
            
             <StatusBar style="auto" />
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 
